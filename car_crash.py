@@ -98,6 +98,7 @@ def car1(IMAGE):
     car.penup()
     car.forward(325)
     car.pendown()
+    done()
 
 
 def main():
