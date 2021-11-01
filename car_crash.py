@@ -102,7 +102,7 @@ def car1(IMAGE):
 
 def main():
     IMAGE = "car\car-2-icon-48.gif"
-    car(IMAGE)
+    car1(IMAGE)
 
 
 if __name__ == '__main__':
