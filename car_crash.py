@@ -8,6 +8,7 @@ def go_to_start(car):
 
 
 def case1_text(car):
+    """ Types Case1 on Screen"""
     car.penup()
     car.goto(-280, 200)
     car.color("White")
@@ -16,6 +17,7 @@ def case1_text(car):
 
 
 def case2_text(car):
+    """ Types Case2 on Screen"""
     car.reset()
     car.penup()
     car.goto(-280, 200)
@@ -25,6 +27,7 @@ def case2_text(car):
 
 
 def street(car):
+    """ Draws the border of the street"""
     car.pencolor(0, 0, 0)
     car.left(90)
     car.forward(150)
@@ -41,7 +44,9 @@ def street(car):
     car.forward(40)
     car.pendown()
 
+
 def wall(car):
+    """ Draws the wall that the car will hit!"""
     car.color("white")
     car.penup()
     car.forward(350)
@@ -52,10 +57,19 @@ def wall(car):
     car.right(180)
     car.forward(150)
 
-def car(IMAGE):
+
+def starting_text(car):
+    car.penup()
+    car.goto(-280, -200)
+    car.write("Press Any Key To Start the Test: ", font=("Arial", 16, 'normal', 'bold', 'italic', 'underline'))
+    car.pendown()
+
+
+def car1(IMAGE):
     screen = Screen()
     screen.register_shape(IMAGE)
     car = Turtle()
+    car.speed(0)
     car.shape(IMAGE)
     screen.colormode(255)
     screen.bgcolor(112, 120, 100)
@@ -70,8 +84,20 @@ def car(IMAGE):
     car.forward(40)
     car.pendown()
 
+    starting_text(car)
+    go_to_start(car)
+    car.penup()
 
-    exit1 = input("Press any key to exit!")
+    car.forward(40)
+    car.pendown()
+
+    start = input("Press Any Key To Start the Test: ")
+
+    # Now stop before the wall
+    car.speed(1)
+    car.penup()
+    car.forward(325)
+    car.pendown()
 
 
 def main():
