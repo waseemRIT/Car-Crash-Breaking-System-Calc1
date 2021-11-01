@@ -3,7 +3,7 @@ from turtle import *
 
 def go_to_start(car):
     car.penup()
-    car.goto(-200, 0)
+    car.goto(-210, 0)
     car.pendown()
 
 def case1_text(car):
@@ -18,7 +18,7 @@ def case2_text(car):
     car.penup()
     car.goto(-280, 200)
     car.color("White")
-    car.write("Case 1: ", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline') )
+    car.write("Case 2: ", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline') )
     car.pendown()
 
 
@@ -27,6 +27,20 @@ def street(car):
     car.pencolor(0, 0, 0)
     car.left(90)
     car.forward(150)
+    car.right(90)
+    car.forward(450)
+    car.right(90)
+    car.forward(250)
+    car.right(90)
+    car.forward(450)
+    car.right(90)
+    car.forward(100)
+    car.right(90)
+    car.penup()
+    car.forward(50)
+    car.pendown()
+
+
 
 def car(IMAGE):
     screen = Screen()
