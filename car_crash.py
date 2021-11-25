@@ -1,4 +1,5 @@
 from turtle import *
+import time
 
 
 def go_to_start(car):
@@ -76,7 +77,7 @@ def border():
     line.forward(350)
 
 
-def car(IMAGE1, IMAGE2, IMAGE3):
+def car(IMAGE1, IMAGE2):
     screen = Screen()
     screen.register_shape(IMAGE1)
     car1 = Turtle()
@@ -87,6 +88,7 @@ def car(IMAGE1, IMAGE2, IMAGE3):
     screen.bgcolor(112, 120, 100)
     screen.title("Case 1 ")
 
+    screen.delay(0)
     case1_text(car1)
     go_to_start(car1)
     street(car1)
@@ -103,23 +105,30 @@ def car(IMAGE1, IMAGE2, IMAGE3):
     go_to_start(car1)
     car1.penup()
 
-    car1.forward(40)
+    car1.forward(30)
     car1.pendown()
 
-    start = input("Press Any Key To Start the Test: ")
+    time.sleep(5)
+    screen.delay(10)
 
     # Now stop before the wall
     car1.penup()
     car1.speed(1)
     car1.left(90)
+
     car1.forward(50)
     car1.right(90)
-    car1.forward(320)
+    car1.forward(160)
+    screen.delay(50)
+    car1.forward(160)
+    screen.delay(10)
     car1.pendown()
 
-    test2 = input("Press Any Key to Run Test 2: ")
+    screen.delay(0)
     # draw line between cars
     border()
+
+    time.sleep(3)
 
     # initialize case 2
     car2 = Turtle()
@@ -131,20 +140,17 @@ def car(IMAGE1, IMAGE2, IMAGE3):
     car2.penup()
     car2.goto(-170, -30)
     car2.pendown()
+    screen.delay(10)
+
+    time.sleep(1.8)
 
     car2.speed(1)
     car2.penup()
-    car2.forward(330)
+    car2.forward(165)
+    screen.delay(60)
+    car2.forward(165)
+    screen.delay(10)
     car2.pendown()
-
-    # screen.tracer(0)
-    # explosion = Turtle()
-    # screen.register_shape(IMAGE3)
-    # explosion.shape(IMAGE3)
-    # explosion.penup()
-    # explosion.goto(190, 0)
-    # explosion.pendown()
-    # screen.update()
 
     done()
 
@@ -152,8 +158,8 @@ def car(IMAGE1, IMAGE2, IMAGE3):
 def main():
     car1 = "car\car1.gif"
     car2 = r"car_2.gif"
-    explosion = "explosion.gif"
-    car(car1, car2, explosion)
+
+    car(car1, car2)
 
 
 if __name__ == '__main__':
