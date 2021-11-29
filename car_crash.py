@@ -77,7 +77,7 @@ def border():
     line.forward(350)
 
 
-def car(IMAGE1, IMAGE2):
+def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     screen = Screen()
     screen.register_shape(IMAGE1)
     car1 = Turtle()
@@ -115,11 +115,23 @@ def car(IMAGE1, IMAGE2):
     car1.penup()
     car1.speed(1)
     car1.left(90)
-
     car1.forward(50)
     car1.right(90)
     car1.forward(160)
-    screen.delay(50)
+
+    # creating the man - survives
+    screen.delay(0)
+    screen.register_shape(IMAGE3)
+    man1 = Turtle()
+    man1.shape(IMAGE3)
+    man1.penup()
+    man1.left(90)
+    man1.forward(50)
+    man1.right(90)
+    man1.forward(200)
+    man1.pendown()
+
+    screen.delay(70)
     car1.forward(160)
     screen.delay(10)
     car1.pendown()
@@ -147,19 +159,44 @@ def car(IMAGE1, IMAGE2):
     car2.speed(1)
     car2.penup()
     car2.forward(165)
-    screen.delay(60)
+
+    # creating the second man - dies
+    screen.delay(0)
+    man2 = Turtle()
+    man2.shape(IMAGE3)
+    man2.penup()
+    man2.right(90)
+    man2.forward(18)
+    man2.left(90)
+    man2.forward(200)
+    man2.pendown()
+    # the car hits the brakes
+    screen.delay(70)
     car2.forward(165)
     screen.delay(10)
     car2.pendown()
+
+    # the crash
+    screen.delay(0)
+    screen.register_shape(IMAGE5)
+    crash = Turtle()
+    crash.shape(IMAGE5)
+    crash.penup()
+    crash.speed(0)
+    crash.goto(190.00, -18.00)
+    crash.pendown()
+    
 
     done()
 
 
 def main():
-    car1 = "car\car1.gif"
+    car1 = r"car1.gif"
     car2 = r"car_2.gif"
-
-    car(car1, car2)
+    man1 = r"man3.gif"
+    man2 = r"man5.gif"
+    crash = r"crash6.gif"
+    demo(car1, car2, man1, man2, crash)
 
 
 if __name__ == '__main__':
