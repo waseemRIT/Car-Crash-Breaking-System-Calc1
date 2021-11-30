@@ -108,7 +108,7 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     car1.forward(30)
     car1.pendown()
 
-    time.sleep(5)
+    # time.sleep(0.5)
     screen.delay(10)
 
     # Now stop before the wall
@@ -117,7 +117,7 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     car1.left(90)
     car1.forward(50)
     car1.right(90)
-    car1.forward(160)
+    car1.forward(155)
 
     # creating the man - survives
     screen.delay(0)
@@ -131,35 +131,46 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     man1.forward(200)
     man1.pendown()
 
+    # creating the braking starting point line
+    brake_line = Turtle()
+    brake_line.hideturtle()
+    brake_line.left(90)
+    brake_line.penup()
+    brake_line.forward(25)
+    brake_line.pendown()
+    brake_line.forward(90)
+    brake_line.right(180)
+    brake_line.penup()
+    brake_line.forward(100)
+    brake_line.pendown()
+
+    time.sleep(5)
     screen.delay(70)
     car1.forward(160)
-    screen.delay(10)
     car1.pendown()
 
     screen.delay(0)
     # draw line between cars
     border()
 
-    time.sleep(3)
-
-    # initialize case 2
+    # initialize case 2     --------------------------------------------------
     car2 = Turtle()
     screen.register_shape(IMAGE2)
     car2.shape(IMAGE2)
 
+    # Cars starting point
     car2.speed(0)
+    screen.delay(0)
     case2_text(car2)
     car2.penup()
     car2.goto(-170, -30)
     car2.pendown()
     screen.delay(10)
-
-    time.sleep(1.8)
-
-    car2.speed(1)
+    time.sleep(2)
     car2.penup()
-    car2.forward(165)
+    screen.delay(15)
 
+    car2.forward(160)
     # creating the second man - dies
     screen.delay(0)
     man2 = Turtle()
@@ -170,11 +181,28 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     man2.left(90)
     man2.forward(200)
     man2.pendown()
+
+    # draws the line
+    brake_line2 = Turtle()
+    brake_line2.hideturtle()
+    brake_line2.penup()
+    brake_line2.forward(20)
+    brake_line2.pendown()
+    brake_line2.right(90)
+    brake_line2.forward(50)
+
     # the car hits the brakes
     screen.delay(70)
+    # car stops on line for a sec then hits the brakes
+    time.sleep(3)
     car2.forward(165)
-    screen.delay(10)
+
     car2.pendown()
+
+    screen.delay(15)
+    # Remover the car and the man
+    car2.hideturtle()
+    man2.hideturtle()
 
     # the crash
     screen.delay(0)
@@ -185,7 +213,6 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     crash.speed(0)
     crash.goto(190.00, -18.00)
     crash.pendown()
-    
 
     done()
 
