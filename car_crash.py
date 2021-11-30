@@ -165,10 +165,10 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     car2.penup()
     car2.goto(-170, -30)
     car2.pendown()
-    screen.delay(10)
+
     time.sleep(2)
     car2.penup()
-    screen.delay(15)
+    screen.delay(20)
 
     car2.forward(160)
     # creating the second man - dies
@@ -189,13 +189,13 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     brake_line2.forward(20)
     brake_line2.pendown()
     brake_line2.right(90)
-    brake_line2.forward(50)
+    brake_line2.forward(70)
 
     # the car hits the brakes
-    screen.delay(70)
+    screen.delay(75)
     # car stops on line for a sec then hits the brakes
     time.sleep(3)
-    car2.forward(165)
+    car2.forward(170)
 
     car2.pendown()
 
@@ -211,7 +211,7 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     crash.shape(IMAGE5)
     crash.penup()
     crash.speed(0)
-    crash.goto(190.00, -18.00)
+    crash.goto(190.00, -30.00)
     crash.pendown()
 
     done()
