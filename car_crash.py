@@ -2,6 +2,7 @@ from turtle import *
 import time
 
 
+# this function helps in taking the turtle to the starting point of the car's moving position
 def go_to_start(car):
     car.penup()
     car.goto(-210, 0)
@@ -15,6 +16,7 @@ def case1_text(car):
     car.color("White")
     car.write("Case 1: ", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline'))
     car.pendown()
+    car.hideturtle()
 
 
 def case2_text(car):
@@ -86,10 +88,16 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
 
     screen.colormode(255)
     screen.bgcolor(112, 120, 100)
-    screen.title("Case 1 ")
+    screen.title("Demonstration")
 
     screen.delay(0)
-    case1_text(car1)
+    # this writes case 1
+    case1_writer = Turtle()
+    case1_writer.hideturtle()
+    case1_writer.color(112, 120, 100)
+    case1_writer.penup()
+    case1_text(case1_writer)
+    pendown()
     go_to_start(car1)
     street(car1)
     wall(car1)
@@ -161,6 +169,7 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     # Cars starting point
     car2.speed(0)
     screen.delay(0)
+    case1_writer.clear()    # removes case 1 from screen
     case2_text(car2)
     car2.penup()
     car2.goto(-170, -30)
