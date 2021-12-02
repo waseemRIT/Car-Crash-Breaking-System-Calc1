@@ -9,6 +9,7 @@ def go_to_start(car):
     car.pendown()
 
 
+# writes case 1 on screen
 def case1_text(car):
     """ Types Case1 on Screen"""
     car.penup()
@@ -19,6 +20,7 @@ def case1_text(car):
     car.hideturtle()
 
 
+# writes case 2 on screen
 def case2_text(car):
     """ Types Case2 on Screen"""
     car.reset()
@@ -65,7 +67,8 @@ def wall(car):
 def starting_text(car):
     car.penup()
     car.goto(-280, -200)
-    car.write("Press Any Key To Start the Test: ", font=("Arial", 16, 'normal', 'bold', 'italic', 'underline'))
+    car.write("Please Use Automatic Brakes To Save Lives!!!\n Thanks For Listening",
+              font=("Arial", 16, 'normal', 'bold', 'italic'))
     car.pendown()
 
 
@@ -109,7 +112,6 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     car1.forward(40)
     car1.pendown()
 
-    starting_text(car1)
     go_to_start(car1)
     car1.penup()
 
@@ -169,7 +171,7 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     # Cars starting point
     car2.speed(0)
     screen.delay(0)
-    case1_writer.clear()    # removes case 1 from screen
+    case1_writer.clear()  # removes case 1 from screen
     case2_text(car2)
     car2.penup()
     car2.goto(-170, -30)
@@ -222,6 +224,9 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     crash.speed(0)
     crash.goto(190.00, -30.00)
     crash.pendown()
+
+    # Writes the final words!!
+    starting_text(car2)
 
     done()
 
