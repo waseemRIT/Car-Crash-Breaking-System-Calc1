@@ -15,7 +15,7 @@ def case1_text(car):
     car.penup()
     car.goto(-280, 200)
     car.color("White")
-    car.write("Case 1: ", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline'))
+    car.write("Case 1: Automated Brakes", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline'))
     car.pendown()
     car.hideturtle()
 
@@ -27,7 +27,7 @@ def case2_text(car):
     car.penup()
     car.goto(-280, 200)
     car.color("White")
-    car.write("Case 2: ", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline'))
+    car.write("Case 2: Manual Braking", font=("Arial", 32, 'normal', 'bold', 'italic', 'underline'))
     car.pendown()
 
 
@@ -162,7 +162,9 @@ def demo(IMAGE1, IMAGE2, IMAGE3, IMAGE4, IMAGE5):
     screen.delay(0)
     # draw line between cars
     border()
-
+    
+    time.sleep(2)
+    
     # initialize case 2     --------------------------------------------------
     car2 = Turtle()
     screen.register_shape(IMAGE2)
